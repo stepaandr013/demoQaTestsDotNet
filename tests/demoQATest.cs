@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace demoQATestsDotNet.tests
 {
-    internal class demoQATest : BaseTest
+    internal class DemoQATest : BaseTest
     {
         [Test]
         public void TestWebTable()
         {
             new MainPage()
-                .goToElements();
+                .goToElements()
+                .webTables()
+                .newRecordPage()
+                .addNewRecord();
+
         }
     }
 }

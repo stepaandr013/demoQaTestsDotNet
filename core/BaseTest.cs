@@ -18,8 +18,8 @@ namespace demoQATestsDotNet.core
             driver = new ChromeDriver();
             driver.Manage().Cookies.DeleteAllCookies();
             driver.Manage().Window.Maximize();
-            /*driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);*/
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             BasePage.setDriver(driver);
         }
 
