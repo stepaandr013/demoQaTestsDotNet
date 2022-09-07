@@ -26,7 +26,6 @@ namespace demoQATestsDotNet.demoQAWebTablesPages
         {
             Assert.AreEqual(title.Text, "Elements");
             webTablesButton.Click();
-            Thread.Sleep(1000);
             return new WebTablesPage();
         }
 

@@ -1,5 +1,6 @@
 ﻿using demoQATestsDotNet.core;
 using demoQATestsDotNet.demoQAWebTablesPages;
+using demoQATestsDotNet.settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,19 @@ namespace demoQATestsDotNet.tests
         [Test]
         public void TestWebTable()
         {
-            new MainPage()
+            WebTablesPage webTablesPage = new MainPage()
                 .goToElements()
                 .webTables()
                 .newRecordPage()
-                .addNewRecord();
+                .addNewRecord()
+                .serachRecord();
+
+            Assert.AreEqual(TestDataDemoQA.FIRST_NAME, webTablesPage.getFirstName());
+            Assert.AreEqual(TestDataDemoQA.lAST_NAME, webTablesPage.getLastName());
+            Assert.AreEqual(TestDataDemoQA.AGE, webTablesPage.getAge());
+            Assert.AreEqual(TestDataDemoQA.EMAIL, webTablesPage.getEmail());
+            Assert.AreEqual(TestDataDemoQA.SALARY, webTablesPage.getSalary());
+            Assert.AreEqual(TestDataDemoQA.DEPARTAMENT, webTablesPage.getDepartament());
 
         }
     }

@@ -38,7 +38,7 @@ namespace demoQATestsDotNet.demoQAWebTablesPages
             PageFactory.InitElements(driver, this);
         }
 
-        public NewRecordPage addNewRecord()
+        public WebTablesPage addNewRecord()
         {
             firstNameInput.SendKeys(TestDataDemoQA.FIRST_NAME);
             lastNameInput.SendKeys(TestDataDemoQA.lAST_NAME);
@@ -48,9 +48,8 @@ namespace demoQATestsDotNet.demoQAWebTablesPages
             departmentInput.SendKeys(TestDataDemoQA.DEPARTAMENT);
 
             submitButton.Click();
-            Thread.Sleep(5000);
 
-            return this;
+            return new WebTablesPage();
         }
     }
 }
